@@ -5,12 +5,13 @@
   programs.sway = {
     enable = true;
     package = pkgs.swayfx; # Instructs NixOS to use the SwayFX binary instead of standard Sway
-    wrapperFeatures.gtk = {
-      enable = true;
-    };
+    wrapperFeatures.gtk = true;
   };
 
-  # 2. Display manager: Slick Greeter configuration
+  # 2. Session-manager
+  services.displayManager.sessionPackages = [ pkgs.swayfx ];
+
+  # 3. Display manager: Slick Greeter configuration
   services.xserver.displayManager.lightdm = {
     enable = true;
     greeters.slick = {
