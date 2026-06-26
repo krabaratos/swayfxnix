@@ -39,6 +39,10 @@
   # System packages: file manager, archive tools, bar, launcher
   environment.systemPackages = with pkgs; [
     kitty
+    
+    #wayland
+    wl-clipboard
+    swaybg
 
     # GTK theming
     nwg-look
